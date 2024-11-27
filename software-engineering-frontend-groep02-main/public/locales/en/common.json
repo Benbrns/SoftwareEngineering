@@ -1,0 +1,191 @@
+{
+  "app.title": "Car 4 Rent",
+  "header": {
+    "home": "Home",
+    "cars": "Cars",
+    "carOverview": "Car Overview",
+    "addCar": "Add Car",
+    "rentalOverview": "Rental Overview",
+    "rentOverview": "Rent Overview",
+    "bills": "Bills",
+    "complaints": "Complaints",
+    "login": "Login",
+    "signUp": "Sign Up",
+    "logout": "Log Out",
+    "language": "language"
+  },
+  "car": {
+    "brand": "Brand",
+    "model": "Model",
+    "type": "Type",
+    "licencePlate": "Licence Plate",
+    "numberOfSeats": "Number of Seats",
+    "numberOfChildSeats": "Number of Child Seats",
+    "foldingRearSeatOption": "Folding Rear Seat",
+    "towBarOption": "Tow bar"
+  },
+  "rental": {
+    "ownerRentals": "My cars for rent",
+    "otherRental": "Available Rentals",
+    "car": "Car",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "pickupCity": "Pickup City",
+    "ownerEmail": "Owner Email",
+    "basePrice": "Base Price",
+    "pricePerKm": "Price per Km",
+    "fuelPenaltyPrice": "Fuel penalty price",
+    "pricePerDay": "Price per day",
+    "otherRentals": "Available Rentals"
+  },
+  "rent": {
+    "emailReceiver": "Email Receiver",
+    "phoneNumber": "Phone number",
+    "email": "Email",
+    "registerNumber": "Id Number of National Register",
+    "drivingNumber": "Driving Licence Number",
+    "birthDate": "Birth date"
+  },
+  "system": {
+    "addCarButton": "Add Car",
+    "deleteCar": {
+      "button": "Delete",
+      "title": "Delete Car",
+      "message": "Do you want to delete"
+    },
+    "addRental": "Add Rental",
+    "cancelRental": {
+      "button": "Cancel",
+      "message": "Do you want to cancel",
+      "for": "rental for"
+    },
+    "makeRent": {
+      "button": "Rent",
+      "title": "Make Rent",
+      "car": "Car",
+      "period": "Period"
+    },
+    "cancelRent": {
+      "title": "Cancel Rent",
+      "rentOf": "Rent of",
+      "on": "On"
+    },
+    "makeSimulation": {
+      "button": "Simulate Cost",
+      "title": "Rent Simulation",
+      "description": "Here you'll be able to simulate a rent and make a price estimation.",
+      "price": {
+        "base": "Base Price",
+        "km": "Price/Km",
+        "fuel": "Fuel Penalty Price",
+        "day": "Price/day"
+      },
+      "days": "Amount of days selected:",
+      "remainingFuel": "Remaining fuel at check-out",
+      "drivenKm": "Driven Km's",
+      "totalPrice": "Total price of the rent:",
+      "close": "Close",
+      "makeRent": "Make Rent"
+    },
+    "rentFrom": "From",
+    "rentUntil": "until",
+    "searchRental": "Search Rental",
+    "resetFilter": "Reset",
+    "carBrandSearch": "Car Brand",
+    "searchRent": "Search Rent",
+    "loading": "Loading...",
+    "register": {
+      "title": "Register",
+      "button": "Register",
+      "roleSelect": "Select Roles:"
+    },
+    "login": {
+      "title": "Login",
+      "signupText": "Don't have an account yet? Sign up now!",
+      "button": "Log in"
+    }
+  },
+  "modal": {
+    "yes": "Yes",
+    "no": "No",
+    "abort": "Cancel",
+    "confirm": "Confirm"
+  },
+  "notification": {
+    "rentRequest": "Rent Request",
+    "rentAccept": "Rent has been accepted",
+    "rentReject": "Rent has been rejected",
+    "noNotification": "No notifications",
+    "rental": {
+      "title": "Notification Rental",
+      "conf": "Confirmation Rent",
+      "canc": "Cancelation Rent",
+      "for": "Rent for",
+      "by": "by"
+    }
+  },
+  "user": {
+    "titleL": "Login",
+    "titleS": "Register",
+    "mail": "Email",
+    "password": "Password",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phoneNum": "Phone number",
+    "bDate": "Birth date",
+    "nRegNum": "National registration number",
+    "lNum": "Licence number",
+    "role": {
+      "renter": "Renter",
+      "owner": "Owner"
+    }
+  },
+  "error": {
+    "noCars": "No cars yet!",
+    "noRentals": "No rentals yet!",
+    "noRents": "No rents yet!",
+    "noValues": "You need to choose one or more values to get search results!",
+    "noResults": "There was nothing found for the given search!",
+    "noBrand": "Brand is required!",
+    "noType": "Type is required!",
+    "noLicencePlate": "Licence plate is required!",
+    "noNumberOfSeats": "Number of seats is required!",
+    "noStartDate": "Start date is required!",
+    "noEndDate": "End date is required!",
+    "noCity": "City is required!",
+    "noEmail": "Email is required!",
+    "noPrice": {
+      "base": "Base price is required!",
+      "perKm": "Price per kilometer is required!",
+      "fuelPenalty": "Fuel penalty price is required!",
+      "perDay": "Price per day is required!"
+    },
+    "noPhone": "Phone number is required!",
+    "noRegisterNumber": "Identification number of national register is required!",
+    "noBirthDate": "Birthdate is required!",
+    "noDrivigLicenceNumber": "Driving licence number is required!",
+    "invalid": {
+      "date": "Date is invalid, it has to be of the following format dd/mm/yyyy",
+      "startDateNoFuture": "start date is invalid, it has to be in the future",
+      "endDateBeforeStartDate": "End date must be after the start date",
+      "endDateNoFuture": "End date is invalid, it has to be in the future",
+      "email": "Email value is invalid, it has to be of the following format xxx@yyy.zzz",
+      "registerNumber": "Identification number of national register is invalid, it has to be of the following format yy.mm.dd-xxx.zz",
+      "drivingLicenceNumber": "Driving licence number is invalid, it has to be of the following format 0000000000 (where each 0 is a number between 0 and 9)"
+    },
+    "user": {
+      "invalCred": "Invalid credentials",
+      "loginSucc": "Login succesfull",
+      "signupSucc": "Creating user. You will be redirected...",
+      "noPass": "Password is required!",
+      "noFirstN": "First name is required!",
+      "noLastN": "Last name is required!"
+    }
+  },
+  "map": {
+    "loading": "Map loading...",
+    "city": "City: ",
+    "rentals": "Available rentals: ",
+    "street": "Streets: "
+  }
+}

@@ -1,0 +1,101 @@
+name: CD Pipeline
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: "adopt"
+          java-version: "17"
+        
+      - name: Run Unit Tests
+        run: mvn --batch-mode -Dtest=be.ucll.se.groep02backend.models.** test
+        continue-on-error: false
+      
+      - name: Run Integration Tests
+        run: mvn --batch-mode -Dtest=be.ucll.se.groep02backend.integration.** test
+        continue-on-error: false
+
+      - name: Setup Flyway Production
+        run: |
+          echo "
+          # POSTGRESQL
+          spring.datasource.url=jdbc:postgresql://groep02-database.postgres.database.azure.com:5432/production
+          spring.datasource.driver-class-name=org.postgresql.Driver
+          spring.datasource.username=gertje
+          spring.datasource.password=${{secrets.AZURE_DB_PASSWORD}}
+
+          spring.jpa.hibernate.ddl-auto=validate
+          spring.jpa.show-sql=true
+          spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+          spring.jpa.properties.hibernate.format_sql=true 
+          spring.jpa.database=POSTGRESQL
+          spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+          # Flyway
+          spring.flyway.baseline-on-migrate=true
+          spring.flyway.enabled=true
+          spring.flyway.user=gertje
+          spring.flyway.password=${{secrets.AZURE_DB_PASSWORD}}
+          spring.flyway.baseline-description="init"
+          spring.flyway.baseline-version=0
+
+          #Authentication
+          # dont put spaces in the list
+          auth.whitelist.paths=/register,/authenticate,/h2,/h2/**,/h2/login.do?,/swagger-ui.html/**,/v3/api-docs/**,/swagger-ui/**,/swagger-ui.html,/car
+          jwt.secretKey=${{secrets.JWT_TOKEN_SECRETKEY}}
+          jwt.tokenExpirationTime=1440000
+
+          #Mail notifications
+          spring.mail.host=smtp.gmail.com
+          spring.mail.port=587
+          spring.mail.username=carrentalucll@gmail.com
+          spring.mail.password=emmc jzgq iumx pynp 
+          spring.mail.properties.mail.smtp.auth=true
+          spring.mail.properties.mail.smtp.starttls.enable=true" > src/main/resources/application.properties
+
+      - name: Delete previous package
+        run: |
+          curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          https://api.github.com/orgs/ucllsoftwareengineering2324/packages/maven/be.ucll.se.groep02-backend
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Build and deploy
+        run: |
+          mvn --batch-mode deploy -DskipTests=true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download package from GitHub Packages
+        run: |
+          PACKAGE_URL="https://maven.pkg.github.com/UcllSoftwareEngineering2324/software-engineering-backend-groep02/be/ucll/se/groep02-backend/0.0.1/groep02-backend-0.0.1.jar"
+          wget --header="Authorization: token ${{ secrets.GITHUB_TOKEN }}" $PACKAGE_URL -O software-engineering-backend-groep02.jar
+              
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'groep02-backend'
+          slot-name: 'Production'
+          package: 'software-engineering-backend-groep02.jar'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E56A1D302B5F4A9FB53EDB3A90AC43D7 }}
+
+

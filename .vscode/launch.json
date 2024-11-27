@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Groep02BackendApplication<groep02-backend>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "be.ucll.se.groep02backend.Groep02BackendApplication",
+      "projectName": "groep02-backend",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

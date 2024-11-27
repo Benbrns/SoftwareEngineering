@@ -1,0 +1,94 @@
+name: CI pipeline Front-end
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.x
+          registry-url: "https://registry.npmjs.org"
+
+      - name: install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+        continue-on-error: false
+
+      - name: Set back-end url
+        run: |
+          echo "NEXT_PUBLIC_API_URL=https://groep02-backend-acceptance.azurewebsites.net" > .env
+          echo "NEXTAUTH_URL=https://groep02-frontend-acceptance.azurewebsites.net" >> .env
+
+      - name: build standalone
+        run: |
+          npm run build
+          mkdir -p ./standalone_build/.next/static
+          cp -r .next/standalone/.next/* standalone_build/.next/
+          cp -rf .next/standalone/* standalone_build/
+          cp -r .next/static standalone_build/.next
+          cp -r public standalone_build/
+          cd standalone_build
+          rm -rf node_modules
+
+      - name: delete
+        run: |
+          shopt -s extglob
+          rm -rf -v !("standalone_build")
+
+      - name: Delete old version for new version
+        run: |
+          curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.GIT_ACCES_TOKEN }}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          https://api.github.com/orgs/UcllSoftwareEngineering2324/packages/npm/software-engineering-frontend-groep02
+
+      - name: Publish to github packages
+        working-directory: standalone_build
+        run: |
+          npm config set registry https://npm.pkg.github.com
+          npm set //npm.pkg.github.com/:_authToken ${{ env.NODE_AUTH_TOKEN }}
+          npm run publish:github --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GIT_ACCES_TOKEN }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: download from github
+        run: |
+          npm config set registry https://npm.pkg.github.com
+          npm set //npm.pkg.github.com/:_authToken ${{ env.NODE_AUTH_TOKEN }}
+          npm pack @UcllSoftwareEngineering2324/software-engineering-frontend-groep02@0.0.1
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GIT_ACCES_TOKEN }}
+
+      - name: unpack Tarball
+        run: tar -xzf UcllSoftwareEngineering2324-software-engineering-frontend-groep02-0.0.1.tgz
+
+      - name: Install package
+        working-directory: package
+        run: |
+          npm install --reg https://registry.npmjs.com
+
+      - name: "Deploy to Azure Web App"
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: "groep02-frontend-acceptance"
+          slot-name: "Production"
+          package: package
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D846285CE35F43A4AF53FAC29A5BD9DD }}

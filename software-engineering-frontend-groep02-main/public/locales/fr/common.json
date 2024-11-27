@@ -1,0 +1,191 @@
+{
+  "app.title": "Voiture à Louer",
+  "header": {
+    "home": "Accueil",
+    "cars": "Voitures",
+    "carOverview": "Aperçu des Voitures",
+    "addCar": "Ajouter une Voiture",
+    "rentalOverview": "Mes Voitures Louer",
+    "rentOverview": "Mes Locations",
+    "bills": "Factures",
+    "complaints": "Plaintes",
+    "login": "Connexion",
+    "signUp": "S'inscrire",
+    "logout": "Déconnexion",
+    "language": "Langue"
+  },
+  "car": {
+    "brand": "Marque",
+    "model": "Modèle",
+    "type": "Type",
+    "licencePlate": "Plaque d'Immatriculation",
+    "numberOfSeats": "Nombre de Places",
+    "numberOfChildSeats": "Nombre de Sièges Enfants",
+    "foldingRearSeatOption": "Option Siège Arrière Repliable",
+    "towBarOption": "Attache Remorque"
+  },
+  "rental": {
+    "ownerRentals": "Mes Voitures à Louer",
+    "otherRental": "Locations Disponibles",
+    "car": "Voiture",
+    "startDate": "Date de Début",
+    "endDate": "Date de Fin",
+    "pickupCity": "Ville de Prise en Charge",
+    "ownerEmail": "Email du Propriétaire",
+    "basePrice": "Prix de Base",
+    "pricePerKm": "Prix par Km",
+    "fuelPenaltyPrice": "Prix de Pénalité Carburant",
+    "pricePerDay": "Prix par Jour",
+    "otherRentals": "Locations Disponibles"
+  },
+  "rent": {
+    "emailReceiver": "Destinataire de l'Email",
+    "phoneNumber": "Numéro de Téléphone",
+    "email": "Email",
+    "registerNumber": "Numéro d'Identification du Registre National",
+    "drivingNumber": "Numéro de Permis de Conduire",
+    "birthDate": "Date de Naissance"
+  },
+  "system": {
+    "addCarButton": "Ajouter une Voiture",
+    "deleteCar": {
+      "button": "Supprimer",
+      "title": "Supprimer la Voiture",
+      "message": "Voulez-vous supprimer"
+    },
+    "addRental": "Ajouter une Location",
+    "cancelRental": {
+      "button": "Annuler",
+      "message": "Voulez-vous annuler",
+      "for": "la location pour"
+    },
+    "makeRent": {
+      "button": "Louer",
+      "title": "Faire une Location",
+      "car": "Voiture",
+      "period": "Période"
+    },
+    "cancelRent": {
+      "title": "Annuler la Location",
+      "rentOf": "Location de",
+      "on": "Le"
+    },
+    "makeSimulation": {
+      "button": "Simuler Coût",
+      "title": "Simulation de Location",
+      "description": "Ici, vous pourrez simuler une location et estimer un prix.",
+      "price": {
+        "base": "Prix de Base",
+        "km": "Prix/Km",
+        "fuel": "Prix Pénalité Carburant",
+        "day": "Prix/Jour"
+      },
+      "days": "Nombre de jours sélectionnés :",
+      "remainingFuel": "Carburant restant au check-out",
+      "drivenKm": "Kilomètres parcourus",
+      "totalPrice": "Prix total de la location :",
+      "close": "Fermer",
+      "makeRent": "Faire une Location"
+    },
+    "rentFrom": "De",
+    "rentUntil": "jusqu'à",
+    "searchRental": "Rechercher une Location",
+    "resetFilter": "Réinitialiser",
+    "carBrandSearch": "Marque de Voiture",
+    "searchRent": "Rechercher une Location",
+    "loading": "Chargement...",
+    "register": {
+      "title": "S'inscrire",
+      "button": "S'inscrire",
+      "roleSelect": "Sélectionner les Rôles :"
+    },
+    "login": {
+      "title": "Connexion",
+      "signupText": "Vous n'avez pas encore de compte ? Inscrivez-vous maintenant !",
+      "button": "Se connecter"
+    }
+  },
+  "modal": {
+    "yes": "Oui",
+    "no": "Non",
+    "abort": "Annuler",
+    "confirm": "Confirmer"
+  },
+  "notification": {
+    "rentRequest": "Demande de Location",
+    "rentAccept": "La Location a été Acceptée",
+    "rentReject": "La Location a été Rejetée",
+    "noNotification": "Pas de notifications",
+    "rental": {
+      "title": "Notification Location",
+      "conf": "Confirmation Location",
+      "canc": "Annulation Location",
+      "for": "Location pour",
+      "by": "par"
+    }
+  },
+  "user": {
+    "titleL": "Connexion",
+    "titleS": "S'inscrire",
+    "mail": "Email",
+    "password": "Mot de Passe",
+    "firstName": "Prénom",
+    "lastName": "Nom de Famille",
+    "phoneNum": "Numéro de Téléphone",
+    "bDate": "Date de Naissance",
+    "nRegNum": "Numéro d'Identification du Registre National",
+    "lNum": "Numéro de Permis de Conduire",
+    "role": {
+      "renter": "Locataire",
+      "owner": "Propriétaire"
+    }
+  },
+  "error": {
+    "noCars": "Pas encore de voitures !",
+    "noRentals": "Pas encore de locations !",
+    "noRents": "Pas encore de locations !",
+    "noValues": "Vous devez choisir une ou plusieurs valeurs pour obtenir des résultats de recherche !",
+    "noResults": "Rien n'a été trouvé pour la recherche donnée !",
+    "noBrand": "La Marque est requise !",
+    "noType": "Le Type est requis !",
+    "noLicencePlate": "La Plaque d'Immatriculation est requise !",
+    "noNumberOfSeats": "Le Nombre de Places est requis !",
+    "noStartDate": "La Date de Début est requise !",
+    "noEndDate": "La Date de Fin est requise !",
+    "noCity": "La Ville est requise !",
+    "noEmail": "L'Email est requis !",
+    "noPrice": {
+      "base": "Le Prix de Base est requis !",
+      "perKm": "Le Prix par Kilomètre est requis !",
+      "fuelPenalty": "Le Prix de Pénalité Carburant est requis !",
+      "perDay": "Le Prix par Jour est requis !"
+    },
+    "noPhone": "Le Numéro de Téléphone est requis !",
+    "noRegisterNumber": "Le Numéro d'Identification du Registre National est requis !",
+    "noBirthDate": "La Date de Naissance est requise !",
+    "noDrivigLicenceNumber": "Le Numéro de Permis de Conduire est requis !",
+    "invalid": {
+      "date": "La Date est invalide, elle doit être au format suivant jj/mm/aaaa",
+      "startDateNoFuture": "La date de début est invalide, elle doit être dans le futur",
+      "endDateBeforeStartDate": "La Date de Fin doit être après la Date de Début",
+      "endDateNoFuture": "La Date de Fin est invalide, elle doit être dans le futur",
+      "email": "La valeur de l'Email est invalide, elle doit être au format xxx@yyy.zzz",
+      "registerNumber": "Le Numéro d'Identification du Registre National est invalide, il doit être au format aa.mm.jj-xxx.zz",
+      "drivingLicenceNumber": "Le Numéro de Permis de Conduire est invalide, il doit être au format 0000000000 (où chaque 0 est un chiffre entre 0 et 9)"
+    },
+    "user": {
+      "invalCred": "Identifiants Invalides",
+      "loginSucc": "Connexion Réussie",
+      "signupSucc": "Création de l'utilisateur. Vous allez être redirigé.",
+      "noPass": "Le Mot de Passe est requis !",
+      "noFirstN": "Le Prénom est requis !",
+      "noLastN": "Le Nom de Famille est requis !"
+    }
+  },
+  "map": {
+    "loading": "Chargement du map...",
+    "city": "Ville: ",
+    "rentals": "Nombre de locations disponibles dans la région: ",
+    "street": "des rues: "
+  }
+}

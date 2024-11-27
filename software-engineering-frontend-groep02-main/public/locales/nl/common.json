@@ -1,0 +1,191 @@
+{
+  "app.title": "Auto Te Huur",
+  "header": {
+    "home": "Home",
+    "cars": "Auto's",
+    "carOverview": "Auto Overzicht",
+    "addCar": "Auto Toevoegen",
+    "rentalOverview": "Mijn Verhuringen",
+    "rentOverview": "Gehuurde Auto's",
+    "bills": "Rekeningen",
+    "complaints": "Klachten",
+    "login": "Inloggen",
+    "signUp": "Registreren",
+    "logout": "Uitloggen",
+    "language": "Taal"
+  },
+  "car": {
+    "brand": "Merk",
+    "model": "Model",
+    "type": "Type",
+    "licencePlate": "Kenteken",
+    "numberOfSeats": "Aantal Stoelen",
+    "numberOfChildSeats": "Aantal Kinderstoelen",
+    "foldingRearSeatOption": "Optie Achterbank Vouwen",
+    "towBarOption": "Trekhaak"
+  },
+  "rental": {
+    "ownerRentals": "Mijn Auto's te Huur",
+    "otherRental": "Beschikbare Verhuur",
+    "car": "Auto",
+    "startDate": "Startdatum",
+    "endDate": "Einddatum",
+    "pickupCity": "Ophaalstad",
+    "ownerEmail": "Eigenaar Email",
+    "basePrice": "Basisprijs",
+    "pricePerKm": "Prijs per Km",
+    "fuelPenaltyPrice": "Brandstof Strafprijs",
+    "pricePerDay": "Prijs per Dag",
+    "otherRentals": "Beschikbare Verhuur"
+  },
+  "rent": {
+    "emailReceiver": "Email Ontvanger",
+    "phoneNumber": "Telefoonnummer",
+    "email": "Email",
+    "registerNumber": "Identificatienummer Nationaal Register",
+    "drivingNumber": "Rijbewijsnummer",
+    "birthDate": "Geboortedatum"
+  },
+  "system": {
+    "addCarButton": "Auto Toevoegen",
+    "deleteCar": {
+      "button": "Verwijderen",
+      "title": "Auto Verwijderen",
+      "message": "Wil je verwijderen"
+    },
+    "addRental": "Verhuur Toevoegen",
+    "cancelRental": {
+      "button": "Annuleren",
+      "message": "Wil je annuleren",
+      "for": "verhuur voor"
+    },
+    "makeRent": {
+      "button": "Huren",
+      "title": "Huur Maken",
+      "car": "Auto",
+      "period": "Periode"
+    },
+    "cancelRent": {
+      "title": "Verhuur Annuleren",
+      "rentOf": "Verhuur van",
+      "on": "Op"
+    },
+    "makeSimulation": {
+      "button": "Kosten Simuleren",
+      "title": "Verhuur Simulatie",
+      "description": "Hier kunt u een verhuur simuleren en een prijs schatten.",
+      "price": {
+        "base": "Basisprijs",
+        "km": "Prijs/Km",
+        "fuel": "Brandstof Strafprijs",
+        "day": "Prijs/Dag"
+      },
+      "days": "Aantal geselecteerde dagen:",
+      "remainingFuel": "Resterende brandstof bij uitchecken",
+      "drivenKm": "Gereden kilometers",
+      "totalPrice": "Totale prijs van de huur:",
+      "close": "Sluiten",
+      "makeRent": "Huur Maken"
+    },
+    "rentFrom": "Van",
+    "rentUntil": "tot",
+    "searchRental": "Verhuur Zoeken",
+    "resetFilter": "Resetten",
+    "carBrandSearch": "Automerk",
+    "searchRent": "Verhuur Zoeken",
+    "loading": "Laden...",
+    "register": {
+      "title": "Registreren",
+      "button": "Registreren",
+      "roleSelect": "Rollen Selecteren:"
+    },
+    "login": {
+      "title": "Inloggen",
+      "signupText": "Heb je nog geen account? Registreer nu!",
+      "button": "Inloggen"
+    }
+  },
+  "modal": {
+    "yes": "Ja",
+    "no": "Nee",
+    "abort": "Annuleren",
+    "confirm": "Bevestigen"
+  },
+  "notification": {
+    "rentRequest": "Verhuuraanvraag",
+    "rentAccept": "Verhuur is geaccepteerd",
+    "rentReject": "Verhuur is geweigerd",
+    "noNotification": "Geen meldingen",
+    "rental": {
+      "title": "Notificatie Verhuur",
+      "conf": "Bevestiging Verhuur",
+      "canc": "Annulering Verhuur",
+      "for": "Verhuur voor",
+      "by": "door"
+    }
+  },
+  "user": {
+    "titleL": "Inloggen",
+    "titleS": "Registreren",
+    "mail": "Email",
+    "password": "Wachtwoord",
+    "firstName": "Voornaam",
+    "lastName": "Achternaam",
+    "phoneNum": "Telefoonnummer",
+    "bDate": "Geboortedatum",
+    "nRegNum": "Nationaal Registratienummer",
+    "lNum": "Rijbewijsnummer",
+    "role": {
+      "renter": "Huurder",
+      "owner": "Eigenaar"
+    }
+  },
+  "error": {
+    "noCars": "Nog geen auto's!",
+    "noRentals": "Nog geen verhuringen!",
+    "noRents": "Nog geen verhuringen!",
+    "noValues": "Je moet één of meer waarden kiezen om zoekresultaten te krijgen!",
+    "noResults": "Er is niets gevonden voor de opgegeven zoekopdracht!",
+    "noBrand": "Merk is vereist!",
+    "noType": "Type is vereist!",
+    "noLicencePlate": "Kenteken is vereist!",
+    "noNumberOfSeats": "Aantal stoelen is vereist!",
+    "noStartDate": "Startdatum is vereist!",
+    "noEndDate": "Einddatum is vereist!",
+    "noCity": "Stad is vereist!",
+    "noEmail": "Email is vereist!",
+    "noPrice": {
+      "base": "Basisprijs is vereist!",
+      "perKm": "Prijs per kilometer is vereist!",
+      "fuelPenalty": "Brandstof strafprijs is vereist!",
+      "perDay": "Prijs per dag is vereist!"
+    },
+    "noPhone": "Telefoonnummer is vereist!",
+    "noRegisterNumber": "Identificatienummer Nationaal Register is vereist!",
+    "noBirthDate": "Geboortedatum is vereist!",
+    "noDrivigLicenceNumber": "Rijbewijsnummer is vereist!",
+    "invalid": {
+      "date": "Datum is ongeldig, het moet van het volgende formaat zijn dd/mm/jjjj",
+      "startDateNoFuture": "Startdatum is ongeldig, het moet in de toekomst zijn",
+      "endDateBeforeStartDate": "Einddatum moet na de startdatum zijn",
+      "endDateNoFuture": "Einddatum is ongeldig, het moet in de toekomst zijn",
+      "email": "Email waarde is ongeldig, het moet van het volgende formaat zijn xxx@yyy.zzz",
+      "registerNumber": "Identificatienummer Nationaal Register is ongeldig, het moet van het volgende formaat zijn jj.mm.dd-xxx.zz",
+      "drivingLicenceNumber": "Rijbewijsnummer is ongeldig, het moet van het volgende formaat zijn 0000000000 (waarbij elke 0 een cijfer is tussen 0 en 9)"
+    },
+    "user": {
+      "invalCred": "Ongeldige inloggegevens",
+      "loginSucc": "Inloggen geslaagd",
+      "signupSucc": "Gebruiker aanmaken. U wordt doorgestuurd.",
+      "noPass": "Wachtwoord is vereist!",
+      "noFirstN": "Voornaam is vereist!",
+      "noLastN": "Achternaam is vereist!"
+    }
+  },
+  "map": {
+    "loading": "Map aan het laden...",
+    "city": "Stad: ",
+    "rentals": "Aantal beschikbare verhuren in regio: ",
+    "street": "Straten: "
+  }
+}
