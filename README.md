@@ -41,7 +41,6 @@ De Car Rental Service biedt gebruikers de mogelijkheid om voertuigen te reserver
 
 - **React**:
   - Dynamische en responsive gebruikersinterface.
-  - Integratie met de backend API via Axios.
 
 ### Hosting en Automatisatie
 
